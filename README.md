@@ -22,24 +22,23 @@
 <br/>
 
 
-##  Open Source Contributions
+## Open Source Contributions: Kornia & Kornia-rs
 
-### **Kornia (kornia-rs)** — *Rust · Computer Vision · SIMD · Optimization*
+I’m an active contributor to the **Kornia** ecosystem, focusing on high-performance computer vision across both Python (PyTorch) and Rust. My work generally centers on removing bottlenecks, optimizing memory layouts, and making complex vision tasks viable for resource-constrained environments.
 
-* Authored kornia-bow, Bag of Words (BoW) retrieval crate written in pure rust, achieving **11× faster lookups, And 5 times lower memory usage** compared to reference implementations.
-* Refactored **AprilTags detection** data structures, slashing memory usage from **>6GB to ~450KB** (~14,000× reduction), allowing apriltags to run in even memory constrained enviornments.
-* Developed **Fused Preprocessing Kernels** to minimize memory bandwidth, delivering a **10.5× speedup** in image preprocessing pipelines.
-* refined SVD implementations to maximize throughput for computer vision tasks.
+### **Key Highlights & Optimizations**
 
-### **Kornia (Python)** — *Python · PyTorch · Differential Vision*
-
-*(Over 40+ Merged PRs)*
-
-* Optimized **Otsu thresholding** strategies, resulting in a massive **308× performance increase**.
-* Reworked `bbox_to_mask3d` operations, achieving a **~55× speedup** (5526% improvement).
-* Optimized the dynamic programming implementation **needleman_wunsch algorithm** to be more cache efficient, achieving a **17.7×** speedup
-* Optimized Polynomial Solvers, implementing a vectorized/analytical solution to significantly accelerate geometric estimation tasks, about a **200x speedup**.
-
+* **Memory-Efficient AprilTags:** Reworked the core data structures for AprilTag detection in Rust. By optimizing how data is stored, I reduced memory consumption from **>6GB to ~450KB** (a 14,000× reduction), enabling the library to run on small edge devices.
+* **High-Speed Retrieval (kornia-bow):** Authored a pure-Rust Bag of Words (BoW) crate. Through careful memory management, it achieves **11× faster lookups** and **5× lower memory usage** than reference implementations.
+* **Massive Python Speedups:** Optimized several core PyTorch operations, including:
+    * **Otsu Thresholding:** Achieved a **308×** performance increase through strategy refinement.
+    * **Geometric Estimation:** Implemented vectorized analytical polynomial solvers, resulting in a **200×** speedup.
+    * **3D Masking:** Refactored `bbox_to_mask3d` for a **55×** improvement.
+* **Pipeline & Algorithm Tuning:**  Developed **Fused Preprocessing Kernels** to minimize memory bandwidth, delivering a **5×** speedup in image preprocessing pipelines.
+    * Optimized the **Needleman-Wunsch** algorithm for better cache efficiency (**17.7×** speedup).
+    * Refined **SVD (Singular Value Decomposition)** implementations to maximize throughput for real-time vision tasks.
+ 
+all this and a lot moreeeee! I'm always up to help optimize real world projects, if you have a intresting optimization problem, feel free to share and we could tackle it together!
 
 <br/>
 
